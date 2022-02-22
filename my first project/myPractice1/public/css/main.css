@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/*  Custom properties */ 
+
+:root{
+    --leading: 2em;
+}
+
+body{
+    font-family: monospace;
+    margin: 0;
+}
+
+.hero-bg{
+    background: #b47124 url(../images/bg.jpg);
+    background-position: 50% 88%;
+    color: white;
+    text-align: center;
+    padding-bottom: 6em;
+}
+/* background-position baray control background
+bar mekvar x va y hast */
+
+header{
+    padding: 1em 0 ;
+}
+
+.hero-bg a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+section{
+    margin: 0 1em;
+}
+
+h1{
+    font-size: 2.5em;
+    margin: 2em 0 1.2em 0;
+}
+
+h1 span{
+    text-transform: uppercase;
+    display: block;
+    font-size: 1.4rem;
+    position:relative;
+    z-index:1;
+}
+
+h1 span::before{
+    content: '';
+    position: absolute;
+    width: 3em;
+    background-color: #ff9900c4;
+    height: .4em;
+    bottom: 0;
+    z-index: -1;
+    margin-left: -.2em;
+}
+
+.hero-bg p{
+    font-weight: bold;
+    margin: 0 1em 3em 1em;
+}
+
+.form-container{
+    background-color: white;
+    margin: 3em -1em 0;
+    padding: 2em;
+}
+/* -1 baray dotaraf form-container hast . ysani bechsbe be dotarf
+safhe */
+
+label {
+    color: #7a6324;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+}
+
+input[type=text] {
+    border: 1px solid #707070;
+    width: 100%;
+    padding: 1em;
+    box-sizing: border-box;  
+    border-radius: .5em;
+    margin-top: 1em;
+}
+/* va ghti ye input az on yeki bozorgtar mishe 
+ba box-sizing handlesh mikonim 
+va ghti eidth 100% batavajo be padding 100 hast*/
+
+.form-container p{
+    color: gray;
+    margin-bottom: 1.5em;
+    font-weight: normal;
+    font-size: .9em;
+    margin-top: .3em;
+}
+
+input[type=button]{
+    background-color: #F89104;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 1em 0;
+    width: 100%;
+    border-radius: .5em;
+    font-size: 1.3em;
+    text-align: center;
+    cursor:pointer;
+}
+
+input[type=button]:hover{
+    background-color: #d37d04;
+   
+}
+
+.authentic{
+    margin: 0;
+}
+ 
+img {
+    width: 100%;
+}
+
+.right-col{
+    text-align: center;
+    margin: 2em 1em;
+}
+
+h2{
+    text-transform: uppercase;
+    position: relative;
+}
+
+h2::before{
+    content: '';
+    position: absolute;
+    width: 4em;
+    background-color: #ff9900c4;
+    height: .4em;
+    bottom: 0;
+    z-index: -1;
+    margin-left: -.3em;
+}
+
+p {
+    line-height: var(--leading);
+}
+
+.overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.8);
+    z-index: 1;
+    place-content: center;
+    color: white;
+    display: none;
+    opacity: 0; /* nabashe ham moredi nadare */
+}
+.animate-overaly{
+    animation: overlay 3s forwards;
+    display: grid;
+}
+
+@media (min-width: 710px){
+    section{
+        margin: 0 4em;
+    }
+
+    .form-container{
+        margin: 2em -4em 0;
+    }  
+}
+
+@media (min-width: 900px){
+    .hero-bg {
+        text-align: left;
+    }
+    .hero-bg p{
+        margin: 0 0 1em;
+    }
+
+    .hero-bg section{
+        width: 55%;
+    }
+
+    .form-container{
+        margin: 2em 0 0 ;
+        padding: 2em;
+        border-radius: .5em;
+        box-shadow: 10px 10px 10px rgba(0,0,0,.3);
+    }
+
+    form {
+        display: flex;  
+        /* align-content:space-between; */
+        /* justify-content: space-between; */
+    }
+
+    .form-left{
+        width: 80%;
+    }
+
+    label{
+        margin: 0;
+    }
+
+    input[type=button]{
+        height: fit-content;
+        font-size: 1.1em;
+        margin-left: 1em;
+        margin-top: 1.8em;
+        padding: .7em 0.5em;
+        width: 30%;
+        /* height va margin-top mitanm bardaram */
+        
+    }
+    .hero-bg p{
+        margin-bottom: .5em;
+    }
+
+    section.authentic{
+        display: grid;
+        grid-template-columns: repeat(2,50%);
+        grid-template-areas: "bowl content";
+    }
+
+    .right-col{
+        grid-area: content;
+        padding: 0 10%;
+        text-align: left;
+        align-self:center;
+    }
+
+    img{
+        grid-area: bowl;
+    }
+
+    h2{
+        margin: 0;
+    }
+}
+
+.top {
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn{
+    form{
+        opacity: 0;
+        transform: translateY(0);
+        
+    }
+    to{
+        opacity: 1;
+        transform: translateY(2em);
+    }/*  chera opacity? */
+}
+
+@keyframes overlay{
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+/*  ba class hay bootstrap ye button bezaram ke overlay zodtar bebande -> remove class*/
