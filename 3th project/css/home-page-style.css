@@ -1,0 +1,249 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    position: fixed;
+    width: 100%;
+    margin: auto;
+}
+
+.background img{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    object-fit: cover;
+    z-index: -2;
+}
+.overlay{
+    background: #3b3b3bbf;
+    opacity: 0.15;
+    z-index: -1;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+}
+.info{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    height: 10vh;
+    /* width: 80%; */
+    /* margin: 0; */
+    padding: 10px;
+    text-align: center;
+}
+.info i{
+    font-size: 18px;
+    color: white;
+}
+.info .profile-img{
+    width: 70px;
+    height: 70px;
+    position: relative;
+    margin-top: 40px;
+    border: 3px solid white;
+    border-radius: 50%;
+}
+.info div:nth-child(1){
+    width: 60px;
+    height: 60px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.info div:nth-child(3){
+    width: 60px;
+    height: 60px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.body{
+    text-align: center;
+}
+
+.body ul{
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: 70vh;
+    margin-top: 1em;
+    color: #faf8efeb;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.body h2{
+    margin: 0;
+    font-size: 30px;
+}
+
+.item a{
+text-decoration: none;
+color: #faf8efeb;
+}
+
+.body p{
+    margin: 0;
+    font-weight: 200;
+    padding: 5px 0;
+}
+
+footer{
+    height: 8em;
+}
+.footer-items{
+    background-color: rgba(78, 78, 74, 0.0);
+    position: relative;
+    background-position: 60% 60%;
+}
+.footer-items:before{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    /* background: url('../images/Untitled-1.jpg'); */
+    background-size: cover;
+    background-repeat: repeat;
+    transform-origin: bottom;
+    transform: scale(0.8 , -0.9);
+    z-index: -2;
+    opacity: 0.2;
+}
+
+.footer-items ul {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.footer-items ul li{
+    list-style-type: none;
+}
+
+.footer-items ul li a{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+.footer-items ul .item{
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    background: #9f9f9f87;
+    opacity: 0.8;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+}
+.footer-items ul li p{
+    margin: 0;
+    font-weight: 600;
+    color: gray;
+}
+
+.footer-items li:active  a .item {
+    animation: white 3s ease-in;
+    /* animation-duration: 3s; */
+    color: black;
+    /* background-color: white; */
+}
+
+
+
+.footer-items li:active  a p{
+    color: white;
+}
+
+.info .star{
+    width: 1.5em;
+    height: 1.5em;
+    background: white;
+    position: relative;
+    top: -1.2em;
+    right: -1.3em;
+    border-radius: 50%;
+    font-weight: 500;
+}
+
+
+.info .notfication{
+    width: 0.6em;
+    height: 0.6em;
+    background: rgb(68, 67, 67);
+    position: relative;
+    top: -1.5em;
+    right: -0.5em;
+    border: solid white 0.6px;
+    border-radius: 50%;
+    font-weight: 500;
+}
+
+.info .notfication::after{
+    
+    font-size: 1.5em;
+    position: relative;
+    color: #e9e4e4;
+    top: -0.762em;
+    left: -0.01em;
+    content: '.';
+}
+
+.info .i-star{
+    color: rgb(92, 92, 92);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    top: 4.8px;
+}
+/* .info .star:after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 500;
+    content: "\f762";
+    
+} */
+
+/*                      */ 
+/* .custom-shape-divider-bottom-1645955165 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1645955165 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 204px;
+}
+
+.custom-shape-divider-bottom-1645955165 .shape-fill {
+    fill: #5F5959;
+} */
+/*                       */ 

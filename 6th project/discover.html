@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>discover</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="css/discover-css.css">
+</head>
+<body>
+    <div class="container">
+
+   
+        <header >
+            <div class="discover">
+                <h1>Discover</h1>
+                <div class="icons">
+                    <img src="images/search.svg" alt="search-icon" class="search">
+                    <img src="images/bell.svg" alt="bell-icon" class="bell">
+                </div>
+            </div>
+
+            <div class="category">
+                <ul>
+                    <a href="#" class="item-menu"><li class="active li-menu">Beach</li></a>
+                    <div class="dot">
+                        <span></span>
+                    </div>
+                    <a href="#" class="item-menu"><li class="li-menu">Mountain</li></a>
+                    <a href="#" class="item-menu"><li class="li-menu">Watterfalls</li></a>
+                    <a href="#" class="item-menu"><li class="li-menu">Lakes</li></a>
+                    <a href="#" class="item-menu"><li class="li-menu">something</li></a>
+                    <a href="#" class="item-menu"><li class="li-menu">something</li></a>
+                </ul>
+            </div>
+        </header>
+
+        <section class="posts">
+            <div class="slider">
+                <div class="card" style="width: 18rem;">
+                    <a href="#" class="btn btn-primary">
+                        <img src="images/kanifushi.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <span class="badge bg-light text-dark">
+                                <img src="images/2792947_star_xmas_icon.svg" alt="" class="star">
+                                <span class="rate">4.8</span>
+                            </span>
+                            <h5 class="card-title">Kanifushi</h5>
+                            <p class="card-text">Maldives, South Asia</p>
+                        </div>
+                    </a>
+                    
+                </div>
+                
+                <div class="card" style="width: 18rem;">
+                    <a href="#" class="btn btn-primary">
+                        <img src="images/santorini.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <span class="badge bg-light text-dark">
+                                <img src="images/2792947_star_xmas_icon.svg" alt="" class="star">
+                                <span class="rate">4.8</span>
+                            </span>
+                            <h5 class="card-title">Santorini</h5>
+                            <p class="card-text">Grece</p>
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+        </section>
+
+        <div class="top-des">
+            <div class="top">
+                <h2>Top Destination</h2>
+                <img src="images/more-svgrepo-com.svg" alt="">
+            </div>
+            <div class="bottom">
+                <div class="item-slider">
+                    <div class="item">
+                        <img src="images/kanifushi.jpg" alt="">
+                        <div class="detail">
+                            <h5>McWays</h3>
+                            <span>california</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="item-slider">
+                   <div class="item">
+                        <img src="images/santorini.jpg" alt="">
+                        <div class="detail">
+                            <h5>Santorini</h3>
+                            <span>Grece</span>
+                        </div>
+                    </div> 
+                </div>
+                
+                <div class="item-slider">
+                    <div class="item">
+                        <img src="images/santorini.jpg" alt="">
+                        <div class="detail">
+                            <h5>Santorini</h3>
+                            <span>Grece</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+
+    </div>
+    <footer>
+        <img src="images/icons8-home (2).svg" alt="home" class="home">
+        <img src="images/compass-svgrepo-com.svg" alt="">
+        <img src="images/heart-svgrepo-com.svg" alt="">
+        <img src="images/user-svgrepo-com.svg" alt="user">
+    </footer>
+</body>
+<!-- JavaScript Bundle with Popper -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
+<script>
+    const wrapper = document.querySelector('.category');
+    const item = document.getElementsByClassName('item-menu');
+    const li = document.getElementsByClassName('li-menu');
+    const dot_dive = document.querySelector(".dot");
+    
+
+    // item.addEventListener("click", function(e) {
+    //     console.log(wrapper,item ,li,active);
+    //     if(item != e.target) return;
+        
+    // });
+
+    for(i=0 ; i<item.length ; i++){
+        item[i].addEventListener("click" , myFun.bind(null,{"target":item[i]},false ));
+    }
+
+    function myFun(e){
+        const active = document.querySelector('.active');
+        const this_element = e.target.childNodes[0];
+        
+        active.classList.remove("active");
+        this_element.classList.add("active");
+        console.log(dot_dive);
+        console.log(this_element.insertAdjacentHTML("afterend" , '<div class="dot"><span></span></div>')) ;
+        // insertAfter(dot_dive , this_element);
+        // ulTag.insertAdjacentHTML("beforeend" , liTag)
+        dot_dive.remove();
+    }
+</script>
+</html>

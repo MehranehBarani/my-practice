@@ -15,15 +15,15 @@
 <body>
     <div class="message">
     </div>
-    @if($errors->any())
+    <!-- @if($errors->any())
         <div class="alert alert-danger">
             <ul>
                 @foreach($errors as $error)
                     <li>{{$error}}</li>
                 @endforeach
             </ul>
-    @endif
-        </div>
+    @endif -->
+        
 
     <div class="overlay" id="overlay">
         <h3>Serching now...</h3>
@@ -60,12 +60,25 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero excepturi dolores aperiam voluptate quasi, cupiditate autem in blanditiis fuga nam!</p>
         </div>
         <img id="food-img" src="images/food.jpg" alt="picture of food">
-        <button type="button" id="test" class="btn btn-primary" data-id="1">1</button>
-        <button type="button" id="test" class="btn btn-primary" data-id="2">2</button>
-        <button type="button" id="test" class="btn btn-primary" data-id="3">3</button>
-        <div class="1" id="1" style="background: yellow; width: 50px; height: 50px display: block;" ></div>
-        <div class="2" id="2" style="background: blue; width: 50px; height: 50px; display: block;" ></div>
-        <div class="3" id="3" style="background: red; width: 50px; height: 50px; display: block;"></div>
+        <div>
+            <button type="button" id="test" class="btn btn-primary" data-id="1">1</button>
+            <button type="button" id="test" class="btn btn-primary" data-id="2">2</button>
+            <button type="button" id="test" class="btn btn-primary" data-id="3">3</button>
+            <div class="1" id="1" style="background: yellow; width: 50px; height: 50px display: block;" ></div>
+            <div class="2" id="2" style="background: blue; width: 50px; height: 50px; display: block;" ></div>
+            <div class="3" id="3" style="background: red; width: 50px; height: 50px; display: block;"></div>
+
+            
+            <form action="{{ route('test-form') }}" method="POST">
+                @csrf
+                <label for="test">test form</label>
+                <input type="text" id="test" name="test" @error('test') @enderror
+                 value="{{old('test')}}">
+                <button type="submit">submit</button>
+            </form>
+      
+                
+        </div>
     </section>
 
     

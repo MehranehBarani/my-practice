@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;;
+}
+
+.black-background{
+    width: 100vw;
+    height: 50vh;
+    position: absolute;
+    z-index: -1;
+}
+
+.black-background img{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    object-fit:fill;
+    border-bottom-left-radius: 40%;
+    
+}
+
+.black-background:before{
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    height: 60px;
+    width: 60px;
+    border-top-right-radius: 40%;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+}
+.black-background .icons{
+    width: 50%;
+    height: 7%;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    padding: 1em 1em;
+}
+
+.black-background .icons a{
+    cursor: pointer;
+}
+
+.black-background .icons .arrow{
+    color: rgb(121 128 128);
+}
+.black-background .icons .comment{
+    color: #dbdada;
+    font-weight: 100;
+}
+
+.overlay{
+    background: #3a3939b7;
+    opacity: 1;
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    object-fit: fill;
+}
+
+.black-background .text{
+    position: inherit;
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    margin-top: -25em;
+    margin-top: -16em ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.black-background h1,p{
+    text-align: center;
+    display: block;
+    
+}
+.black-background h1{
+    color: #dbdada;
+    margin-bottom: 0.2em;
+}
+.black-background p{
+    color: rgb(121 128 128);
+    margin-top: 0;
+}
+
+.mid-img{
+    position: absolute;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 4em; */
+    width: 100%;
+    height: 100%;
+}
+
+.mid-img img{
+    width: 8em;
+    height: 10em;
+    border: none;
+    border-radius: 1em;
+    box-shadow:0px 3px 20px 0.3px rgb(3 15 100 / 75%);
+    margin-bottom: 1em;
+}
+
+.white-background{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    margin-top: 1em;
+    text-align: center;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 1em;
+    padding: 0;
+}
+
+.white-background .name-of-singer{
+    color: rgba(141, 142, 143, 0.973);
+    font-weight: 400;
+    display: block;
+    margin-top: 4em; 
+}
+.white-background .name-of-singer:after{
+    content: "";
+    width: 20%;
+    height: 1.5px;
+    background-color: rgb(174 174 175 / 97%);
+    position: relative;
+    display: flex;
+    top: 1.2em;
+    margin: auto;
+    border-radius: 40%;
+    
+}
+.song .name{
+    font-weight: 600;
+}
+
+.play-list ul{
+    /* display: flex; */
+    height: 7em;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /* flex-direction: column;
+    justify-content: space-between; */
+    align-items: center;
+    overflow: auto;
+    /* user-select: none; */
+}
+
+.play-list ul::-webkit-scrollbar{
+    width: 0;
+}
+
+.play-list  li{
+    list-style: none;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.play-list li.playing{
+    user-select: none;
+    
+}
+
+.play-list li.playing .name:hover{
+    color: rgb(75, 74, 74);
+    transform: scale(102%);
+    transition:  ease-in 1s ease-out;
+    display: block;
+    
+}
+
+.play-list li:first-child{
+    display: none;
+}
+
+.prograss-area{
+    background: white;
+    height: 5px;
+    width: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+    
+    margin-top: 10px;
+}
+
+.prograss-area .prograss-bar{
+    height: inherit;
+    width: 100%;
+    border: inherit;
+    background: linear-gradient(45deg, rgb(53 66 77),rgb(65, 128, 167),rgb(154, 199, 216),#fff, transparent);
+    box-shadow:0px 6px 18px 2px #31377ea1;
+}
+.details{
+    display: flex;
+    justify-content: space-around;
+    margin: 1em 0;
+    align-items: center;
+    width: 100%;
+}
+
+.details span{
+    color: #4b494991;
+}
+
+.details .name-of-song {
+    margin: 0;
+}
+
+/* .black-background::before{
+    content: "";
+    width: 70px;
+    height: 70px;
+    background-color: #c72375;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index:1;
+    border-radius: 50%;
+}
+
+.black-background::after{
+    content: "";
+    width: 90px;
+    height: 90px;
+    background-color: #0fd367;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    border-radius: 50%;
+} */
+
+.control .play-puse{
+    
+    font-size: 24px;
+    background:linear-gradient(rgb(92 154 183) 0% ,rgb(75, 139, 168) 20%,
+                                 rgb(48, 104, 129) 60%,rgb(33, 80, 98) 80%,
+                                 rgb(27, 61, 77)100%);
+    border-radius: 50%;
+    border: 2px white;
+    /* background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 2em;
+    height: 2em;
+    margin: auto;
+    cursor: pointer;
+    pointer-events: auto;
+    color: white;
+}
+
+.control .play-puse i{
+    cursor: pointer;
+    pointer-events: auto;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-list i {
+    color: gray;
+    font-size: 1.8em;
+}
+.play-list .duration{
+    color: gray;
+}
+
+.song .name{
+    display: block;
+    font-weight: bold;
+    text-align: left;
+    color: rgba(29, 29, 29, 0.884);
+    
+}
+
+.yoga-pose{
+    background-image: url(../images/pose-yoga2.png);
+    position: absolute;
+    z-index: 1;
+    width: 9em;
+    height: 13em;
+    /* transform-style: preserve-3d; */
+    border: none;
+    /* border-radius: 4em; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom:3.5em ;
+}

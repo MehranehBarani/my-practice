@@ -1,0 +1,89 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/home-page.css">
+</head>
+<body>
+    <section class="bg"></section>
+    <div class="content">
+        <h1>Explore Your <br> Favorite Journey</h1>
+        <span>Let's make our life so a life</span>
+
+        <div class="container">
+          <div class="drag-content">
+
+            <div class="drop-target">
+              <div class="box"></div>
+            </div>
+
+            <p>><span class="low-opac">></span></p>
+
+            <div class="box-go">
+              <div class="item" id="item" draggable="true">GO</div>
+            </div>
+
+          </div>
+             
+                  
+        </div>
+
+    </div>
+</body>
+
+<script src="js/app.js"></script>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang=en>
+<title>Examples of DataTransfer's setData(), getData() and clearData()</title>
+<meta content="width=device-width">
+<style>
+  div {
+    margin: 0em;
+    padding: 2em;
+  }
+  #source {
+    color: blue;
+    border: 1px solid black;
+  }
+  #target {
+    border: 1px solid black;
+  }
+</style>
+<script>
+function dragstart_handler(ev) {
+ console.log("dragStart");
+ // Change the source element's background color to signify drag has started
+ ev.currentTarget.style.border = "dashed";
+ // Set the drag's format and data. Use the event target's id for the data
+ ev.dataTransfer.setData("text/plain", ev.target.id);
+}
+
+function dragover_handler(ev) {
+ console.log("dragOver");
+ ev.preventDefault();
+}
+
+function drop_handler(ev) {
+ console.log("Drop");
+ ev.preventDefault();
+ // Get the data, which is the id of the drop target
+ var data = ev.dataTransfer.getData("text");
+ ev.target.appendChild(document.getElementById(data));
+ // Clear the drag data cache (for all formats/types)
+ ev.dataTransfer.clearData();
+}
+</script>
+<body>
+<h1>Examples of <code>DataTransfer</code>: <code>setData()</code>, <code>getData()</code>, <code>clearData()</code></h1>
+ <div>
+   <p id="source" ondragstart="dragstart_handler(event);" draggable="true">
+     Select this element, drag it to the Drop Zone and then release the selection to move the element.</p>
+ </div>
+ <div id="target" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">Drop Zone</div>
+</body>
+</html> -->

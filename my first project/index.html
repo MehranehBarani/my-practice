@@ -38,7 +38,7 @@
                     @csrf
                     <div class="form-left">
                         <label for="city">Enter your city</label>
-                        <input type="text" name="city" id="city">
+                        <input type="text" name="city" id="city" required pattern="[Tt]ehran|[Ss]hiraz">
                         <p>Example: "San Diego"</p>
                     </div>
                     
@@ -63,7 +63,15 @@
 <script>
         let btn = document.getElementById("cta-btn");
         let overlay = document.getElementById("overlay");
-        
+        const input_city = document.getElementById("city");
+        input_city.addEventListener("input" ,function(e){
+            if(input_city.validity.typeMismatch){
+                input_city.setCustomValidity("is not true");
+                console.log(input_city.reportValidity());
+            }else{
+                input_city.setCustomValidity("");
+            }
+        });
         function modifyOverlay(){
             // overlay.style.display = "grid";
             overlay.classList.add("animate-overaly");

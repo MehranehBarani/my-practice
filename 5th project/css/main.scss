@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    margin:1.5em;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+a{
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+.hero-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../images/revolt-164_6wVEHfI-unsplash.jpg);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position-x: 20% ;
+    background-position-y: 10% ;
+    z-index: -1;
+    animation: introLoad 2s forwards;           // get an animatation to img line 245 
+}
+
+header .logo{
+    width: 3em;
+    height: 3em;
+    border: none;
+    border-radius: 50%;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav{
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: white;
+    height: 100vh;
+    width: 50%;
+    z-index: 2;
+    text-transform: uppercase;
+    transform: translateX(100%);  // notice 
+    transition: transform 0.5s ease-in-out;
+    ul{
+        list-style: none;
+        padding: 0;
+        margin-top: 8em;
+        a{
+            color: black;
+            padding: 0.75em 2em;
+            display: block;
+            width: 100%;
+
+            &:hover{
+                background: rgb(199, 198, 198);
+            }
+        }
+    }
+    .close{
+        cursor: pointer;
+        float: right;
+        margin: 2em;
+        width: 2.5em;
+    }
+}
+
+.wrapper {
+    nav{
+        // display: none;
+    }
+    .close{
+        // display: none;
+        cursor: pointer;
+    }
+    .menu{
+        width: 3em;
+        cursor: pointer;
+        color: white;
+    }
+}
+
+h1{
+    font-size: 3rem;
+    margin-top: 2em;
+    line-height: 3.3rem
+;}
+
+.subhead{
+    font-size: 1.4rem;  
+}
+
+.hero{
+    color: white;
+    height: 90vh;
+    animation: moveDown 1s ease-in-out forwards;
+    opacity: 0;
+    img{
+        position: absolute;
+        // margin-top: 1em;
+        bottom: 8em;
+        width: 3em;
+        animation: moveArrow 1s alternate-reverse infinite
+        // stroke: white;   agar svg bood
+        // path{
+        //     fill: white;
+        // }
+    }
+}
+
+.more-info{
+    img{
+        width: 100%;
+        object-fit: cover; // img dar height dade shose , dorost gharar mide
+        height: 15em;
+        animation-timing-function: cubic-bezier(0.36, 0.06, 0.44, 0.99);
+        
+    }
+
+    .title{
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+
+    .decs{
+        line-height: 1.5rem;
+    }
+}
+
+.open-nav{
+    transform: translateX(0);
+}
+
+@media only screen  and (min-width:680px){
+    body{
+        margin: 1.5em 5em;
+    }
+}
+
+@media only screen  and (min-width:920px){
+    header .menu{
+        display: none;
+    }
+
+    .close{
+        display: none;
+    }
+
+    nav{
+        transform: translate(0);
+        position: unset;
+        background: none;
+        height: auto;
+        width: auto;
+        
+        ul{
+            margin: 0;
+            display: flex;
+            
+            a{
+                color: white;
+                padding: 0.5em 1.5em;
+                font-size: .9rem;
+
+                &:hover{
+                    background: none;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .hero-img{
+        left: unset;
+        right: 0;
+        width: 50%;
+        height: 42em;
+    }
+
+    .more-info{
+        margin-top: 5em;
+    }
+
+    section.hero{
+        color: black;
+        height: auto;
+        width: 40%; // push it left
+        // float: left;  // no no no , becu whole section goes left
+        margin-bottom: 12em;
+
+        img{
+            position: unset;
+            width: 3em;
+        }
+    }
+
+    .feature{
+        display: grid;
+        grid-template-columns: repeat(2,auto);
+        gap: 3em;
+        margin-bottom: 2em;
+        img{
+            width: 25em;
+        }
+
+        .content{
+            // text-align: right;
+            width: 25em;
+
+        }
+    }
+
+    .feature.left{
+        grid-template-areas: "left right";     // name of the sections 
+
+        img{
+            grid-area: left;                   // which section is left
+        }
+
+        .content{
+            text-align: left;
+            width: 25em;
+            justify-self:left;                // because its parent's position is grid 
+        }                                     // it has extra space that we can justify with justify-self
+    }                                         // grid-> align-item , flex->justify-content
+}                                             // align-item , justify-item->container
+                                              // align-self , justify-self->as a group
+                                              // align-content,justify-content->container(there is extra space)
+@media only screen  and (min-width:1200px){
+    .wrapper {
+        width: 1200px;                       // eny time the screen is bigger than 1200
+        margin: 0 auto;                      // wrapperr just stay in its position
+    }
+
+    .feature {
+        gap: 0;
+    }
+}
+
+@keyframes introLoad {
+    from{
+        clip-path: polygon(1% 0, 100% 0, 100% 0, 1% 0);     // new atributeeee: search css clippy
+    }
+    to{
+        clip-path: polygon(1% 0, 100% 0, 100% 100%, 1% 100%);
+    }
+}
+
+@keyframes moveArrow{
+    from{
+        transform: translateY(-30px);
+    }
+    to{
+        transform: translateY(0);
+        
+    }
+}
+
+@keyframes moveDown{
+    from{
+        transform: translateY(-100px);
+    }
+    to{
+        transform: trasnslateY(0);
+        opacity: 1;
+    }
+}

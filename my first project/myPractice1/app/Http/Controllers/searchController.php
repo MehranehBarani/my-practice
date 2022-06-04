@@ -22,6 +22,14 @@ class searchController extends Controller
             // return redirect()->back()->with('success' , 'vojod nadard');
         
     }
+    function test(Request $request){
+        dd($request->test);
+        $city = $this->validate($request ,[
+            'test'=> 'required|max:255',
+        ]);
+
+        
+    }
    
     
 }

@@ -21,3 +21,4 @@ Route::get('/', function () {
 Route::get('/search','searchController@index')->name('searchContoller.index');
 Route::post('/search' , 'searchController@getData')->name('getData');
 
+Route::post('/test' , 'searchController@test')->name('test-form');

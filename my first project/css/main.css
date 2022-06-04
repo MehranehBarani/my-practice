@@ -279,4 +279,19 @@ p {
         opacity: 0;
     }
 }
+
+#city{
+    border:none;
+    background: none;
+}
+#city:invalid{
+    border:solid 2px red;
+}
+#city:invalid:required{
+   background: linear-gradient(to right, pink, lightgreen); 
+}
+#city:valid{
+    border:solid 2px palegreen;
+}
+
 /*  ba class hay bootstrap ye button bezaram ke overlay zodtar bebande -> remove class*/

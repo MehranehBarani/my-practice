@@ -1,0 +1,88 @@
+body{
+    margin: 0;
+}
+
+.bg {
+    background:url('../images/bote.jpg');
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    object-fit: cover;
+    background-position-x: 34%;
+    background-position-y: 0;
+}
+
+
+.content{
+    position: absolute;
+    z-index: 3;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: -7em;
+    color: white;
+}
+ /* drag and dtop button */
+
+ .drop-target{
+    
+ }
+
+.hide{
+    display: none;
+}
+.drag-over{
+    border: dashed 3px red;
+}
+
+.drag-content{
+    height: 10em;
+    width: 5em;
+    background: linear-gradient(358deg, #000000a8, #00000021);
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box-go{
+    width: 3.5em;
+    height: 3.5em;
+    background: rgb(0 0 0 / 35%);
+    margin-bottom: 0.5em;
+    box-shadow: 0 0 15px 0px #ffffff7a;
+    border-radius: 50%;
+    /* position: relative; */
+}
+
+.box{
+    width: 2.5em;
+    height: 2.5em;
+    background: yellow;
+    opacity: 0;
+}
+
+#item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    height: inherit;
+    /* position: absolute; */
+}
+
+.drag-content p{
+    transform: rotate(-90deg);
+    display: block;
+}
+
+.drag-content span{
+    display: inline-block;
+    opacity: 0.5;
+}

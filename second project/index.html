@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+
+        <img src="images/logo.svg" alt=" logo" class="logo">
+    
+        <nav>
+            <a href="#" class="hide-desktop">
+                <img src="images/ham.svg" alt="toggle menu" class="menu" id="menu">
+            </a>
+
+            <ul class="show-desktop hide-mobile" id="nav">
+                <li id="exit" class="exit-btn hide-desktop"><img src="images/exit.svg" alt="exist menu"></li>
+                <li><a href="#">home</a></li>
+                <li><a href="#">services</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <section>
+        <img src="images/server.svg" alt="server" class="server">
+        <h1>Web Hosting for the Modern Era</h1>
+        <p class="sunhead">Fo serverlss and pay only for what you use.</p>
+        <img src="images/scroll.svg" alt="scroll" class="scroll hide-mobile show-desktop" >
+    </section>
+    </div>
+
+    <div class="blue-container">
+        <div class="container">
+            <ul>
+                <li>
+                    <img src="images/icon-1.svg" alt="Calender icon">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores deserunt voluptate delectus corporis magni. Sunt distinctio nemo tempore </p>
+                </li>
+                <li>
+                    <img src="images/icon-2.svg" alt="Calender icon">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores deserunt voluptate delectus corporis magni. Sunt distinctio nemo tempore </p>
+                </li>
+                <li>
+                    <img src="images/icon-3.svg" alt="Calender icon">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores deserunt voluptate delectus corporis magni. Sunt distinctio nemo tempore </p>
+                </li>
+            </ul>
+        </div>
+    </div>    
+
+    <div class="gray-container">
+        <div class="container">
+            <ul>
+                <li>
+                    <figure>
+                        <img src="images/user1.png" alt="user1">
+                        <blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque similique, natus veniam porro perferendis corporis, sed fugiat voluptatibus nesciunt deleniti repellat! Magni, repudiandae culpa. Iste corrupti alias accusamus illum temporibus!</blockquote>
+                        <figcaption>- Jane Doe</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="images/user2.png" alt="user1">
+                        <blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque similique, natus veniam porro perferendis corporis, sed fugiat voluptatibus nesciunt deleniti repellat! Magni, repudiandae culpa. Iste corrupti alias accusamus illum temporibus!</blockquote>
+                        <figcaption>- John Doe</figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Start your free trial now!</h2>
+        <a href="#" class="ctn">Get Started</a>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="container">
+                <a href="#"><img src="images/logo-white.svg" alt=""></a>
+                <p class="address">Melrose Place , 90210 <br>USA</p>
+                <ul class="footer-links">
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        var menu = document.getElementById('menu');
+        var nav = document.getElementById('nav');
+        var exit = document.getElementById('exit');
+
+        menu.addEventListener('click',function(e){
+            /* vagjti ray dokme menu click mishe dar attr nav , class 
+            hide-mobile barmidare(remove) */
+            nav.classList.toggle('hide-mobile');
+            e.preventDefault();
+        });
+
+        exit.addEventListener('click' , function(e){
+            /* vaghti dokme baste sodan mizani class hide-mobile ke 
+            display: none hast , ezafe mikone ,pas nav baste mishe*/
+            nav.classList.add('hide-mobile');
+            e.preventDefault();
+        });
+
+    </script>
+</body>
+</html>
